@@ -1,63 +1,100 @@
-<html>
-    <body>
-    <div id="thema">DISCUSSION TEST</div>
-    <button onclick="getThema()">Neues Thema</button>
-    </body>
-    <script>
-        
-        function getThema(){
-          const themen = [
-  "4 Tage Woche",
-  "Autofreie Innenstadt",
-  "Bedingungsloses Grundeinkommen",
-  "Schuluniformen",
-  "Noten",
-  "Wählen ab 16",
-  "Online shopping",
-  "Stadt versus Land",
-  "Gendergerechte Sprache",
-  "Skifreizeit",
-  "Home schooling",
-  "Alkoholverbot bis 18",
-  "Vegane Ernährung",
-  "Reisen mit Bahn versus Flugzeug",
-  "Flüchtlinge aufnehmen",
-  "Legalisierung von Drogen",
-  "Organspende",
-  "Impfpflicht",
-  "Ausländerfeindlichkeit",
-  "Cancel culture",
-  "Tempolimit auf Autobahnen",
-  "Lieferdienste",
-  "Bargeld abschaffen",
-  "KI",
-  "Sport",
-  "Handysucht",
-  "Markenkleidung",
-  "Sucht",
-  "Schuljahr im Ausland",
-  "Ferialpraktika",
-  "Handyverbot",
-  "Gewalt in Videospielen",
-  "Härtere Strafen bei online Mobbing",
-  "Gedruckte Zeitungen sind überflüssig",
-  "Mindestlohn",
-  "Bezahlung Geschlecht",
-  "Home Office",
-  "Familie",
-  "Beruf",
-  "Schule",
-  "Medien",
-  "Handys an der Schule",
-  "Aufgaben im Haushalt sollten bezahlt werden",
-  "Taschengeld",
-  "Gleichgeschlechtliche Paare sollten das Recht haben, Kinder zu adoptieren",
-  "Patchwork Familien sind genauso gut wie normale Familien",
-  "Strafen in der Erziehung"
-];
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Discussion Test</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #80deea);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
 
-            const randomElement = themen[Math.floor(Math.random() * themen.length)];
-            document.querySelector("#thema").innerHTML = randomElement;
-        }
-    </script>
+    #thema {
+      font-size: 2rem;
+      background: #ffffffaa;
+      padding: 20px 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      min-width: 300px;
+      transition: all 0.5s ease;
+      opacity: 1;
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border: none;
+      background-color: #00796b;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    button:hover {
+      background-color: #004d40;
+    }
+
+    .fade-out {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+
+    .fade-in {
+      opacity: 1;
+      transform: scale(1);
+    }
+  </style>
+</head>
+<body>
+
+  <div id="thema">DISCUSSION TEST</div>
+  <button onclick="getThema()">Neues Thema</button>
+
+  <script>
+    const themen = [
+      "4 Tage Woche", "Autofreie Innenstadt", "Bedingungsloses Grundeinkommen", "Schuluniformen",
+      "Noten", "Wählen ab 16", "Online shopping", "Stadt versus Land", "Gendergerechte Sprache",
+      "Skifreizeit", "Home schooling", "Alkoholverbot bis 18", "Vegane Ernährung",
+      "Reisen mit Bahn versus Flugzeug", "Flüchtlinge aufnehmen", "Legalisierung von Drogen",
+      "Organspende", "Impfpflicht", "Ausländerfeindlichkeit", "Cancel culture",
+      "Tempolimit auf Autobahnen", "Lieferdienste", "Bargeld abschaffen", "KI", "Sport",
+      "Handysucht", "Markenkleidung", "Sucht", "Schuljahr im Ausland", "Ferialpraktika",
+      "Handyverbot", "Gewalt in Videospielen", "Härtere Strafen bei online Mobbing",
+      "Gedruckte Zeitungen sind überflüssig", "Mindestlohn", "Bezahlung Geschlecht", "Home Office",
+      "Familie", "Beruf", "Schule", "Medien", "Handys an der Schule",
+      "Aufgaben im Haushalt sollten bezahlt werden", "Taschengeld",
+      "Gleichgeschlechtliche Paare sollten das Recht haben, Kinder zu adoptieren",
+      "Patchwork Familien sind genauso gut wie normale Familien", "Strafen in der Erziehung"
+    ];
+
+    function getThema() {
+      const themaEl = document.querySelector("#thema");
+      themaEl.classList.add("fade-out");
+
+      setTimeout(() => {
+        const randomElement = themen[Math.floor(Math.random() * themen.length)];
+        themaEl.innerHTML = randomElement;
+        themaEl.classList.remove("fade-out");
+        themaEl.classList.add("fade-in");
+
+        // Remove the fade-in class after animation completes
+        setTimeout(() => {
+          themaEl.classList.remove("fade-in");
+        }, 500);
+      }, 300);
+    }
+  </script>
+
+</body>
 </html>
