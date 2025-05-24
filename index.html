@@ -6,7 +6,56 @@
     <script>
         
         function getThema(){
-            const themen = ["thema1", "thema2", "thema"]
+          const themen = [
+  "4 Tage Woche",
+  "Autofreie Innenstadt",
+  "Bedingungsloses Grundeinkommen",
+  "Schuluniformen",
+  "Noten",
+  "Wählen ab 16",
+  "Online shopping",
+  "Stadt versus Land",
+  "Gendergerechte Sprache",
+  "Skifreizeit",
+  "Home schooling",
+  "Alkoholverbot bis 18",
+  "Vegane Ernährung",
+  "Reisen mit Bahn versus Flugzeug",
+  "Flüchtlinge aufnehmen",
+  "Legalisierung von Drogen",
+  "Organspende",
+  "Impfpflicht",
+  "Ausländerfeindlichkeit",
+  "Cancel culture",
+  "Tempolimit auf Autobahnen",
+  "Lieferdienste",
+  "Bargeld abschaffen",
+  "KI",
+  "Sport",
+  "Handysucht",
+  "Markenkleidung",
+  "Sucht",
+  "Schuljahr im Ausland",
+  "Ferialpraktika",
+  "Handyverbot",
+  "Gewalt in Videospielen",
+  "Härtere Strafen bei online Mobbing",
+  "Gedruckte Zeitungen sind überflüssig",
+  "Mindestlohn",
+  "Bezahlung Geschlecht",
+  "Home Office",
+  "Familie",
+  "Beruf",
+  "Schule",
+  "Medien",
+  "Handys an der Schule",
+  "Aufgaben im Haushalt sollten bezahlt werden",
+  "Taschengeld",
+  "Gleichgeschlechtliche Paare sollten das Recht haben, Kinder zu adoptieren",
+  "Patchwork Familien sind genauso gut wie normale Familien",
+  "Strafen in der Erziehung"
+];
+
             const randomElement = themen[Math.floor(Math.random() * themen.length)];
             document.querySelector("#thema").innerHTML = randomElement;
         }
