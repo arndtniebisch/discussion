@@ -4,9 +4,10 @@
     <button onclick="getThema()">Neues Thema</button>
     </body>
     <script>
-        const themen = ["thema1", "thema2", "thema"]
-        const randomElement = array[Math.floor(Math.random() * array.length)];
+        
         function getThema(){
+            const themen = ["thema1", "thema2", "thema"]
+            const randomElement = themen[Math.floor(Math.random() * array.length)];
             document.querySelector("#thema").innerHTML = randomElement;
         }
     </script>
