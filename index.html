@@ -1,3 +1,13 @@
 <html>
-    <div>DISCUSSION TEST</div>
+    <body>
+    <div id="thema">DISCUSSION TEST</div>
+    <button onclick="getThema()">Neues Thema</button>
+    </body>
+    <script>
+        const themen = ["thema1", "thema2", "thema"]
+        const randomElement = array[Math.floor(Math.random() * array.length)];
+        function getThema(){
+            document.querySelector("#thema").innerHTML = randomElement;
+        }
+    </script>
 </html>
